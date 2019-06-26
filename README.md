@@ -4,6 +4,7 @@ __my_module_name__
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
 [![Dependencies][dependencies-img]][dependencies-url]
+[![jsdelivr][jsdelivr-img]][jsdelivr-url]
 
 <-- short description -->.
 
@@ -52,3 +53,5 @@ myGraph(<myDOMElement>)
 [build-size-url]: https://bundlephobia.com/result?p=__my_module_name__
 [dependencies-img]: https://img.shields.io/david/vasturiano/__my_module_name__.svg
 [dependencies-url]: https://david-dm.org/vasturiano/__my_module_name__
+[jsdelivr-img]: https://data.jsdelivr.com/v1/package/npm/__my_module_name__/badge?style=rounded
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/__my_module_name__

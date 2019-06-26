@@ -4,6 +4,7 @@
   "description": "",
   "license": "MIT",
   "unpkg": "dist/__my_module_name__.min.js",
+  "jsdelivr": "dist/__my_module_name__.min.js",
   "main": "dist/__my_module_name__.common.js",
   "module": "dist/__my_module_name__.module.js",
   "repository": {
