@@ -28,10 +28,8 @@
   ],
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "dev": "rollup -c -w",
-    "minify": "terser dist/__my_module_name__.js -o dist/__my_module_name__.min.js -c -m --comments '/Version/'",
-    "build-module": "rollup -c rollup.config.module.js",
-    "prepare": "npm run build && npm run minify && npm run build-module"
+    "dev": "rollup -w -c rollup.config.dev.js",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "accessor-fn": "^1.2.2",
@@ -50,6 +48,6 @@
     "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-postcss": "^2.4.1",
-    "terser": "^4.6.6"
+    "rollup-plugin-terser": "^5.3.0"
   }
 }
