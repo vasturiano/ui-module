@@ -1,11 +1,10 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonJs from '@rollup/plugin-commonjs';
 import postCss from 'rollup-plugin-postcss';
-import postCssSimpleVars from 'postcss-simple-vars';
-import postCssNested from 'postcss-nested';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from "rollup-plugin-terser";
-import { name, homepage, version, dependencies } from './package.json';
+import dts from 'rollup-plugin-dts';
+import { name, homepage, version, dependencies, peerDependencies } from './package.json';
 
 const umdConf = {
   format: 'umd',
@@ -17,7 +16,7 @@ export default [
   {
     input: 'src/index.js',
     output: [
-      {
+      { // umd
         ...umdConf,
         file: `dist/${name}.js`,
         sourcemap: true
@@ -31,15 +30,10 @@ export default [
       }
     ],
     plugins: [
-      postCss({
-        plugins: [
-          postCssSimpleVars(),
-          postCssNested()
-        ]
-      }),
-      babel({ exclude: 'node_modules/**' }),
+      postCss(),
       resolve(),
-      commonJs()
+      commonJs(),
+      babel({ exclude: 'node_modules/**' })
     ]
   },
   { // commonJs and ES modules
@@ -47,22 +41,26 @@ export default [
     output: [
       {
         format: 'cjs',
-        file: `dist/${name}.common.js`
+        file: `dist/${name}.common.js`,
+        exports: 'auto'
       },
       {
         format: 'es',
         file: `dist/${name}.module.js`
       }
     ],
-    external: Object.keys(dependencies),
+    external: [...Object.keys(dependencies || {}), ...Object.keys(peerDependencies || {})],
     plugins: [
-      postCss({
-        plugins: [
-          postCssSimpleVars(),
-          postCssNested()
-        ]
-      }),
+      postCss(),
       babel()
     ]
+  },
+  { // expose TS declarations
+    input: 'src/index.d.ts',
+    output: [{
+      file: `dist/${name}.d.ts`,
+      format: 'es'
+    }],
+    plugins: [dts()]
   }
 ];
