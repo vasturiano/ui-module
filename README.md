@@ -3,8 +3,7 @@ __my_module_name__
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
-[![jsdelivr][jsdelivr-img]][jsdelivr-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 <-- short description -->.
 
@@ -19,20 +18,20 @@ Check out the examples:
 
 ## Quick start
 
-```
+```js
 import __my_global_var_name__ from '__my_module_name__';
 ```
 or
-```
+```js
 const __my_global_var_name__ = require('__my_module_name__');
 ```
 or even
-```
+```html
 <script src="//unpkg.com/__my_module_name__"></script>
 ```
 then
-```
-var myGraph = __my_global_var_name__();
+```js
+const myGraph = __my_global_var_name__();
 myGraph(<myDOMElement>)
     .prop(...);
 ```
@@ -47,11 +46,9 @@ myGraph(<myDOMElement>)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url) If this project has helped you and you'd like to contribute back, you can always [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)!
 
-[npm-img]: https://img.shields.io/npm/v/__my_module_name__.svg
+[npm-img]: https://img.shields.io/npm/v/__my_module_name__
 [npm-url]: https://npmjs.org/package/__my_module_name__
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/__my_module_name__.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/__my_module_name__
 [build-size-url]: https://bundlephobia.com/result?p=__my_module_name__
-[dependencies-img]: https://img.shields.io/david/vasturiano/__my_module_name__.svg
-[dependencies-url]: https://david-dm.org/vasturiano/__my_module_name__
-[jsdelivr-img]: https://data.jsdelivr.com/v1/package/npm/__my_module_name__/badge?style=rounded
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/__my_module_name__
+[npm-downloads-img]: https://img.shields.io/npm/dt/__my_module_name__
+[npm-downloads-url]: https://www.npmtrends.com/__my_module_name__
