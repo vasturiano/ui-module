@@ -21,11 +21,7 @@ Check out the examples:
 ```js
 import __my_global_var_name__ from '__my_module_name__';
 ```
-or
-```js
-const __my_global_var_name__ = require('__my_module_name__');
-```
-or even
+or using a *script* tag
 ```html
 <script src="//unpkg.com/__my_module_name__"></script>
 ```
